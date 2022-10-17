@@ -1,0 +1,16 @@
+huggingface-hub==0.1.2
+numpy==1.19.5
+jsonlines==3.0.0
+nltk==3.6.7
+packaging==21.2
+pandas==1.1.5
+scikit-learn==0.24.2
+tokenizers==0.10.3
+torch==1.10.0
+torchaudio==0.10.0
+torchvision==0.11.1
+tqdm==4.62.3
+transaction==3.0.1
+transformers==4.12.3
+tsv==1.2
+typer==0.4.2
