@@ -1,6 +1,6 @@
 
 # DisCup
-This repository contains code for the paper [DisCup: Discriminator Cooperative Unlikelihood Prompt Tuning for Controllable Text Generation](www.google.com) which is appeared at EMNLP2022. If you have any questions, please feel free to create an issue or contact the email of the first author: zhanghanqing@bit.edu.cn
+This repository contains code for the paper [DisCup: Discriminator Cooperative Unlikelihood Prompt Tuning for Controllable Text Generation](https://arxiv.org/abs/2210.09551) which is appeared at EMNLP2022. If you have any questions, please feel free to create an issue or contact the email of the first author: zhanghanqing@bit.edu.cn
 
 
 ## Main File Description
@@ -75,7 +75,7 @@ This repository contains code for the paper [DisCup: Discriminator Cooperative U
     year = "2022",
     month = dec,
     address = "Abu Dhabi",
-    url = "https://arxiv.org",
+    url = {https://arxiv.org/abs/2210.09551},
 }
 ```
 
