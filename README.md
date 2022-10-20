@@ -73,7 +73,7 @@ This repository contains code for the paper [DisCup: Discriminator Cooperative U
     author = "Hanqing Zhang and Dawei song",
     booktitle = "The 2022 Conference on Empirical Methods in Natural Language Processing",
     year = "2022",
-    month = dec,
+    month = "Dec",
     address = "Abu Dhabi",
     url = {https://arxiv.org/abs/2210.09551},
 }

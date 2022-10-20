@@ -224,8 +224,8 @@ class Distill_Tuning(torch.nn.Module):
                 
         res = torch.stack(trans_inputs, dim=0)
         if x_t != None:
-            x_t = x_t.unsqueeze(1)
-            return  torch.cat([res, x_h], dim =1)
+            # x_t = x_t.unsqueeze(1)
+            return  torch.cat([res, x_t], dim =1)
         else:
             return res        
         
@@ -396,7 +396,7 @@ class Distill_Tuning(torch.nn.Module):
         return output.logits.detach().clone()
         
     
-    def forward(self, x_hs, x_ts, att_mask, return_candidates=False):
+    def forward(self, x_hs, x_ts, att_mask):
         # construct query ids
         prompt_tokens = [self.pseudo_token_id]
         queries = self.get_query_head(x_hs, prompt_tokens)
