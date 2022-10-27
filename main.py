@@ -135,27 +135,26 @@ def result_evaluation(args, file_dir, save_file):
             addCsv(save_file, res)
             
 
-
 def main(relation_id=None):
     args = construct_generation_args()
     
-    print(args.mode)
-    
+    print("the task is:", args.mode)
     ## generation mode
     if args.mode =="ctg":
         gen =  CTG(args)
         gen.test()
     
-    
+    ## train classifier or prompt-learning
     elif args.mode =="train":
         trainer = Trainer(args)
         trainer.train()
         
     ## evaluation mode using offline classifier
     elif args.mode =="classifer":
-        
         result_evaluation(args, args.evaluate_file, args.evaluate_outfile)
- 
+        
+    else:
+        raise Exception("the task is out of scope!") 
 
 
 if __name__ == '__main__':

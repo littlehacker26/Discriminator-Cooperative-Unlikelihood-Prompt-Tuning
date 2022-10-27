@@ -4,7 +4,7 @@ This repository contains code for the paper [DisCup: Discriminator Cooperative U
 
 
 ## Main File Description
-- `discrimination.py`: discriminator training(i.e., detoxic classifier and sentiment classifier), and disriminator-based method generation
+- `discrimination.py`: discriminator training(i.e., detoxic classifier and sentiment classifier), and pure disriminator-based(FUDGE) generation
 - `prompt_tuning.py`: the implemetation of vanilla prompt-tuning; it contains the vanilla prompt training and prompt-based generation
 - `distill_tuning.py`: the implemetation of DisCup; it contains the discriminator cooperative unlikelihood prompt training and prompt-based generation
 - `/script`: it  contains the bashes command for model trainng and controllable text generation
@@ -28,13 +28,13 @@ This repository contains code for the paper [DisCup: Discriminator Cooperative U
 - bash train_sentiment_disc.bash
 
 **Detoxic classifer training**
-- cd ./script \
+- cd ./script
 - bash train_detoxic_disc.bash
 
 **Parameter Configuration** 
 - `--data_path`: training corpus data for classifer training
 - `--model_name_or_path`： the path for the pretrained language model, we use GPT2-samll here
-- `--out_dir`: the output direction to save the check-point
+- `--out_dir`: the output directory  to save the check-point
 - `--template`: configure the prompt length of the control-prompt
 
 
@@ -52,7 +52,7 @@ This repository contains code for the paper [DisCup: Discriminator Cooperative U
 
 - `--data_path`:  the prompts data for text generation
 - `--model_name_or_path`： the path for the pretrained langauge model, we use GPT2-Large here
-- `--file_name`: the output direction to save the generation result, it is with '.csv' format
+- `--file_name`: the output directory to save the generation result, it is with '.csv' format
 - `--embedding_checkpoint`: the path of saved control-prompt
 - `--template`: configure the prompt length, which is consistent to the actual prompt length of embedding_checkpoint
 - `--prompt_type`: specify the prompt type, it contain ["neutral" "positive" "negative"] in sentiment generation, only 'negative' is  optional in detoxic

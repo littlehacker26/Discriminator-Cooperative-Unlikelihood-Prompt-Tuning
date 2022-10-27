@@ -382,7 +382,7 @@ class PTuneForLAMA(torch.nn.Module):
             return binary_prob[:,0]
         
         
-    def forward(self, x_hs, x_ts, att_mask, return_candidates=False):
+    def forward(self, x_hs, x_ts, att_mask):
         bz = len(x_hs)
         # construct query ids
         prompt_tokens = [self.pseudo_token_id]
