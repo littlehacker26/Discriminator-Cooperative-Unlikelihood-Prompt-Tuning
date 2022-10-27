@@ -7,8 +7,8 @@ This repository contains code for the paper [DisCup: Discriminator Cooperative U
 - `discrimination.py`: discriminator training(i.e., detoxic classifier and sentiment classifier), and pure disriminator-based(FUDGE) generation
 - `prompt_tuning.py`: the implemetation of vanilla prompt-tuning; it contains the vanilla prompt training and prompt-based generation
 - `distill_tuning.py`: the implemetation of DisCup; it contains the discriminator cooperative unlikelihood prompt training and prompt-based generation
-- `/script`: it  contains the bashes command for model trainng and controllable text generation
-- `evaluate.py`: evaluate the generation texts (i.e., dist1/dist-2/dist-3, Perplexity, and domain keyword coverage) with *.txt* format.
+- `/script`: it contains the bash commands for model trainng and controllable text generation
+- `evaluate.py`: evaluate the generated texts (i.e., dist1/dist-2/dist-3, Perplexity, and domain keyword coverage) with *.txt* format.
 
 
 ## Dependence:
@@ -52,8 +52,8 @@ This repository contains code for the paper [DisCup: Discriminator Cooperative U
 
 - `--data_path`:  the prompts data for text generation
 - `--model_name_or_path`： the path for the pretrained langauge model, we use GPT2-Large here
-- `--file_name`: the output directory to save the generation result, it is with '.csv' format
-- `--embedding_checkpoint`: the path of saved control-prompt
+- `--file_name`: the output directory to save the generation results, it is saved with '.csv' format
+- `--embedding_checkpoint`: the path of the saved control-prompts
 - `--template`: configure the prompt length, which is consistent to the actual prompt length of embedding_checkpoint
 - `--prompt_type`: specify the prompt type, it contain ["neutral" "positive" "negative"] in sentiment generation, only 'negative' is  optional in detoxic
 - `--target_type`: consistent to the type embedding_checkpoint it contain [positive" "negative"] in sentiment control generation, only 'positive' is optional in toxicity avoidance task

@@ -31,7 +31,6 @@ class TextDataset(Dataset):
         self.tokenizer.padding_side = "left"
         
         
-        
     def __len__(self):
         return len(self.src_lens)
 
