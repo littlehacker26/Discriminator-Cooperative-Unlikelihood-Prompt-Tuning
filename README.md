@@ -3,7 +3,7 @@
 This repository contains code for the paper [DisCup: Discriminator Cooperative Unlikelihood Prompt Tuning for Controllable Text Generation](https://arxiv.org/abs/2210.09551) which is appeared at EMNLP2022. If you have any questions, please feel free to create an issue or contact the email of the first author: zhanghanqing@bit.edu.cn
 
 
-## Main File Description
+## Description of Main files 
 - `discrimination.py`: discriminator training(i.e., detoxic classifier and sentiment classifier), and pure disriminator-based(FUDGE) generation
 - `prompt_tuning.py`: the implemetation of vanilla prompt-tuning; it contains the vanilla prompt training and prompt-based generation
 - `distill_tuning.py`: the implemetation of DisCup; it contains the discriminator cooperative unlikelihood prompt training and prompt-based generation
@@ -13,7 +13,7 @@ This repository contains code for the paper [DisCup: Discriminator Cooperative U
 
 ## Dependence:
 
-- **Install the following Conda environment**: *./requirements.txt*
+- **Install the following Conda environment**
 - - our code is bulit on `python3.6`
 - - pip install -r `requirements.txt`
 - **Download the datasets**: [click here](https://drive.google.com/file/d/1jeBGqImwkGJhEELDMUbIP4n0nAbR58Ox/view?usp=sharing)
@@ -38,15 +38,51 @@ This repository contains code for the paper [DisCup: Discriminator Cooperative U
 - `--template`: configure the prompt length of the control-prompt
 
 
-## Controllable Text Generation:
+## Control-prompt Tuning
+
+It contains the training process of control-prompts for vanilla-prompt tuning and DisCup.
 
 **Sentiment control task**
 - cd ./script
-- bash generate_sentiment_distill.bash
+
+- bash train_sentiment_distill.bash
+- bash train_sentiment_prompt.bash
+
 
 **Detoxic task**
 - cd ./script
-- bash generate_detoxic_distill.bash
+
+- bash train_detoxic_distill.bash
+- bash train_detoxic_prompt.bash
+
+**Parameter Configuration**
+
+- `--data_path`:  the training corpus for prompt-tuning, attribute-specific corpus  should  be set for vanilla prompt-tuning  
+- `--model_name_or_path`： the path for the pretrained langauge model, we use GPT2-Large here
+- `--out_dir`: the output directory to save the control-prompts
+- `--disc_embedding_checkpoint`: the path of trained discriminators, it only needs to be specified in DisCup
+- `--template`: configure the prompt length
+- `--ranking_scope`:  cofigure the size of re-ranked candidate tokens, it only needs to be specified in DisCup
+- `--temperature`: cofigure the shapeness the distribution of re-ranked candidate tokens, it only needs to be specified in DisCup
+
+
+
+## Controllable Text Generation:
+It contains the generation processes for vanilla-prompt and DisCup.
+
+
+**Sentiment control task**
+- cd ./script
+
+- bash generate_sentiment_distill.bash
+- bash generate_sentiment_prompt.bash
+
+**Detoxic task**
+- cd ./script
+
+- bash generate_detoxic_prompt.bash
+- bash generate_sentiment_prompt.bash
+
 
 **Parameter Configuration**
 
