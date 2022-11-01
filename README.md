@@ -22,7 +22,12 @@ This repository contains code for the paper [DisCup: Discriminator Cooperative U
 - - [GPT2-small](https://huggingface.co/gpt2)
 - - [GPT2-large](https://huggingface.co/gpt2-large)
 
+After downloading the check-points, you also can directly jump to `Controllable Text Generation` to conduct text generations.
+
 ## Discriminator Training
+It contains the training process of attribute-discriminator, and it is the premise of the DisCup.
+
+
 **Sentiment classifer training**
 - cd ./script
 - bash train_sentiment_disc.bash
