@@ -2,11 +2,6 @@
 # DisCup
 This repository contains code for the paper [DisCup: Discriminator Cooperative Unlikelihood Prompt Tuning for Controllable Text Generation](https://arxiv.org/abs/2210.09551) which is appeared at EMNLP2022. If you have any questions, please feel free to create an issue or contact the email of the first author: zhanghanqing@bit.edu.cn
 
-# Overview
-
-
-
-
 ## Description of Main files 
 - `discrimination.py`: discriminator training(i.e., detoxic classifier and sentiment classifier), and pure disriminator-based(FUDGE) generation
 - `prompt_tuning.py`: the implemetation of vanilla prompt-tuning; it contains the vanilla prompt training and prompt-based generation
@@ -54,15 +49,13 @@ It contains the training process of control-prompts for vanilla-prompt tuning an
 **Sentiment control task**
 - cd ./script
 
-- bash train_sentiment_distill.bash
-- bash train_sentiment_prompt.bash
+- bash train_sentiment_distill.bash or bash train_sentiment_prompt.bash
 
 
 **Detoxic task**
 - cd ./script
 
-- bash train_detoxic_distill.bash
-- bash train_detoxic_prompt.bash
+- bash train_detoxic_distill.bash or bash train_detoxic_prompt.bash
 
 **Parameter Configuration**
 
@@ -83,14 +76,12 @@ It contains the generation processes for vanilla-prompt and DisCup.
 **Sentiment control task**
 - cd ./script
 
-- bash generate_sentiment_distill.bash
-- bash generate_sentiment_prompt.bash
+- bash generate_sentiment_distill.bash or bash generate_sentiment_prompt.bash
 
 **Detoxic task**
 - cd ./script
 
-- bash generate_detoxic_prompt.bash
-- bash generate_sentiment_prompt.bash
+- bash generate_detoxic_prompt.bash or bash generate_sentiment_prompt.bash
 
 
 **Parameter Configuration**
