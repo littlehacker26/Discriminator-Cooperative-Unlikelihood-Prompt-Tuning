@@ -2,6 +2,10 @@
 # DisCup
 This repository contains code for the paper [DisCup: Discriminator Cooperative Unlikelihood Prompt Tuning for Controllable Text Generation](https://arxiv.org/abs/2210.09551) which is appeared at EMNLP2022. If you have any questions, please feel free to create an issue or contact the email of the first author: zhanghanqing@bit.edu.cn
 
+# Overview
+
+
+
 
 ## Description of Main files 
 - `discrimination.py`: discriminator training(i.e., detoxic classifier and sentiment classifier), and pure disriminator-based(FUDGE) generation
@@ -17,12 +21,12 @@ This repository contains code for the paper [DisCup: Discriminator Cooperative U
 - - our code is bulit on `python3.6`
 - - pip install -r `requirements.txt`
 - **Download the datasets**: [click here](https://drive.google.com/file/d/1jeBGqImwkGJhEELDMUbIP4n0nAbR58Ox/view?usp=sharing)
-- **Downlad the check_point**: [click here](https://drive.google.com/file/d/1k4qSpYhuS1SYWL0SVmQ6CuSH_PdAYjdc/view?usp=sharing)
-- **Prepare the GPT2 model**:
+- **Downlad the check_points**: [click here](https://drive.google.com/file/d/1k4qSpYhuS1SYWL0SVmQ6CuSH_PdAYjdc/view?usp=sharing)
+- **Prepare the GPT2 models**:
 - - [GPT2-small](https://huggingface.co/gpt2)
 - - [GPT2-large](https://huggingface.co/gpt2-large)
 
-After downloading the check-points, you also can directly jump to `Controllable Text Generation` to conduct text generations.
+After downloading the trained check-points, you also can directly jump to `Controllable Text Generation`, conducting text generation experiments.
 
 ## Discriminator Training
 It contains the training process of attribute-discriminator, and it is the premise of the DisCup.
@@ -62,14 +66,14 @@ It contains the training process of control-prompts for vanilla-prompt tuning an
 
 **Parameter Configuration**
 
-- `--data_path`:  the training corpus for prompt-tuning, attribute-specific corpus  should  be set for vanilla prompt-tuning  
+- `--data_path`:  the training corpus for prompt-tuning, attribute-specific corpus should  be set for vanilla prompt-tuning  
 - `--model_name_or_path`： the path for the pretrained langauge model, we use GPT2-Large here
 - `--out_dir`: the output directory to save the control-prompts
 - `--disc_embedding_checkpoint`: the path of trained discriminators, it only needs to be specified in DisCup
 - `--template`: configure the prompt length
-- `--ranking_scope`:  cofigure the size of re-ranked candidate tokens, it only needs to be specified in DisCup
-- `--temperature`: cofigure the shapeness the distribution of re-ranked candidate tokens, it only needs to be specified in DisCup
-
+- `--ranking_scope`: configure the size of re-ranked candidate tokens, it only needs to be specified in DisCup
+- `--corpus_type`: the attribute of control-prompts, it contain [positive" "negative"] in sentiment control generation, only 'positive' is optional in toxicity avoidance task
+- `--temperature`: configure the distribution shapeness of re-ranked candidate tokens, it only needs to be specified in DisCup
 
 
 ## Controllable Text Generation:
