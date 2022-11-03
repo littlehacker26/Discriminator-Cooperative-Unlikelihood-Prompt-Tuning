@@ -35,11 +35,6 @@ from discriminator import PTuneForLAMA
 from distill_tuning import Distill_Tuning
 
 
-SMALL_CONST = 1e-10
-BIG_CONST = -1e15
-
-
-
 
 class CTG(object):
     def __init__(self, args):
@@ -104,36 +99,36 @@ class CTG(object):
         self.discrimirator_embedding = self.generateor_embedding
 
     
-    def statistic(self,dataSentiment, dataPPL, dataText, desired_label):
-        sentiment = np.array(dataSentiment).T
-        ppl = np.array(dataPPL).T
-        text = np.array(dataText).T
-        res = []
-        for s, p, t in zip(sentiment, ppl, text):
+#     def statistic(self,dataSentiment, dataPPL, dataText, desired_label):
+#         sentiment = np.array(dataSentiment).T
+#         ppl = np.array(dataPPL).T
+#         text = np.array(dataText).T
+#         res = []
+#         for s, p, t in zip(sentiment, ppl, text):
 
-            res.append(self._statistic(s,p,t,desired_label))
-        return res
+#             res.append(self._statistic(s,p,t,desired_label))
+#         return res
 
 
-    def _statistic(self, dataSentiment, dataPPL, dataText, desired_label):
+#     def _statistic(self, dataSentiment, dataPPL, dataText, desired_label):
 
-        sentiment = np.array(dataSentiment)
+#         sentiment = np.array(dataSentiment)
 
-        ppl = np.array(dataPPL)
+#         ppl = np.array(dataPPL)
 
-        sentiment_target = np.argwhere(sentiment==desired_label)  #get desired text's ppl 
+#         sentiment_target = np.argwhere(sentiment==desired_label)  #get desired text's ppl 
 
-        if len(sentiment_target)>1:
-            _ppl = ppl[sentiment_target] ##get ppl
-            min_index = _ppl.argsort()[0] ##get the index of min value of ppl
-            target_index =sentiment_target[min_index][0][0] ## get target value
-            # print(target_index)
-            if dataPPL[target_index]<=500:
-                return (dataSentiment[target_index], dataPPL[target_index], dataText[target_index],desired_label)
+#         if len(sentiment_target)>1:
+#             _ppl = ppl[sentiment_target] ##get ppl
+#             min_index = _ppl.argsort()[0] ##get the index of min value of ppl
+#             target_index =sentiment_target[min_index][0][0] ## get target value
+#             # print(target_index)
+#             if dataPPL[target_index]<=500:
+#                 return (dataSentiment[target_index], dataPPL[target_index], dataText[target_index],desired_label)
 
-        min_index = ppl.argsort()[0] ##get the index of min value of ppl
+#         min_index = ppl.argsort()[0] ##get the index of min value of ppl
 
-        return (dataSentiment[min_index], dataPPL[min_index], dataText[min_index],desired_label)
+#         return (dataSentiment[min_index], dataPPL[min_index], dataText[min_index],desired_label)
             
         
     def test(self):

@@ -55,7 +55,7 @@ It contains the training process of control-prompts for vanilla-prompt tuning an
 **Detoxic task**
 - cd ./script
 
-- bash train_detoxic_distill.bash or bash train_detoxic_prompt.bash
+- `bash train_detoxic_distill.bash` or `bash train_detoxic_prompt.bash`
 
 **Parameter Configuration**
 
@@ -76,12 +76,12 @@ It contains the generation processes for vanilla-prompt and DisCup.
 **Sentiment control task**
 - cd ./script
 
-- bash generate_sentiment_distill.bash or bash generate_sentiment_prompt.bash
+- `bash generate_sentiment_distill.bash` or `bash generate_sentiment_prompt.bash`
 
 **Detoxic task**
 - cd ./script
 
-- bash generate_detoxic_prompt.bash or bash generate_sentiment_prompt.bash
+- `bash generate_detoxic_prompt.bash` or `bash generate_sentiment_prompt.bash`
 
 
 **Parameter Configuration**
