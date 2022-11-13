@@ -10,7 +10,7 @@ This repository contains code for the paper [DisCup: Discriminator Cooperative U
 - `evaluate.py`: evaluate the generated texts (i.e., dist1/dist-2/dist-3, Perplexity, and domain keyword coverage) with *.txt* format.
 
 
-## Dependence:
+## Dependence
 
 - **Install the following Conda environment**
 - - our code is bulit on `python3.6`
@@ -49,8 +49,7 @@ It contains the training process of control-prompts for vanilla-prompt tuning an
 **Sentiment control task**
 - cd ./script
 
-- bash train_sentiment_distill.bash or bash train_sentiment_prompt.bash
-
+- `bash train_sentiment_distill.bash` or `bash train_sentiment_prompt.bash`
 
 **Detoxic task**
 - cd ./script
@@ -69,7 +68,7 @@ It contains the training process of control-prompts for vanilla-prompt tuning an
 - `--temperature`: configure the distribution shapeness of re-ranked candidate tokens, it only needs to be specified in DisCup
 
 
-## Controllable Text Generation:
+## Controllable Text Generation
 It contains the generation processes for vanilla-prompt and DisCup.
 
 
@@ -81,7 +80,7 @@ It contains the generation processes for vanilla-prompt and DisCup.
 **Detoxic task**
 - cd ./script
 
-- `bash generate_detoxic_prompt.bash` or `bash generate_sentiment_prompt.bash`
+- `bash generate_detoxic_distill.bash` or `bash generate_detoxic_prompt.bash`
 
 
 **Parameter Configuration**

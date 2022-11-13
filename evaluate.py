@@ -101,7 +101,6 @@ def get_review_rate(data):
     return count/sum_count
         
 
-
 def main(generations_dir, model_path, save_path):
     
     path = findAllFile(generations_dir)
