@@ -4,7 +4,7 @@ This repository contains code for the paper [DisCup: Discriminator Cooperative U
 
 ## Description of Main files 
 - `discrimination.py`: discriminator training(i.e., detoxic classifier and sentiment classifier), and pure disriminator-based(FUDGE) generation
-- `prompt_tuning.py`: the implemetation of vanilla prompt-tuning; it contains the vanilla prompt training and prompt-based generation
+- `prompt_tuning.py`: the implemetation of vanilla prompt-tauning; it contains the vanilla prompt training and prompt-based generation
 - `distill_tuning.py`: the implemetation of DisCup; it contains the discriminator cooperative unlikelihood prompt training and prompt-based generation
 - `/script`: it contains the bash commands for model trainng and controllable text generation
 - `evaluate.py`: evaluate the generated texts (i.e., dist1/dist-2/dist-3, Perplexity, and domain keyword coverage) with *.txt* format.
@@ -103,14 +103,18 @@ It contains the generation processes for vanilla-prompt and DisCup.
 
 ## Citation
 ```
-@inproceedings{DisCup-2022,
-    title = "DisCup: Discriminator Cooperative Unlikelihood Prompt Tuning for Controllable Text Generation",
-    author = "Hanqing Zhang and Dawei song",
-    booktitle = "The 2022 Conference on Empirical Methods in Natural Language Processing",
+@inproceedings{zhang-song-2022-discup,
+    title = "{D}is{C}up: Discriminator Cooperative Unlikelihood Prompt-tuning for Controllable Text Generation",
+    author = "Zhang, Hanqing  and
+      Song, Dawei",
+    booktitle = "Proceedings of the 2022 Conference on Empirical Methods in Natural Language Processing",
+    month = dec,
     year = "2022",
-    month = "Dec",
-    address = "Abu Dhabi",
-    url = {https://arxiv.org/abs/2210.09551},
+    address = "Abu Dhabi, United Arab Emirates",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2022.emnlp-main.223",
+    pages = "3392--3406",
+    abstract = "Prompt learning with immensely large Casual Language Models (CLMs) has been shown promising for attribute-controllable text generation (CTG). However, vanilla prompt tuning tends to imitate training corpus characteristics beyond the control attributes, resulting in a poor generalization ability. Moreover, it is less able to capture the relationship between different attributes, further limiting the control performance. In this paper, we propose a new CTG approach, namely DisCup, which incorporates the attribute knowledge of discriminator to optimize the control-prompts, steering a frozen CLM to produce attribute-specific texts. Specifically, the frozen CLM model, capable of producing multitudinous texts, is first used to generate the next-token candidates based on the context, so as to ensure the diversity of tokens to be predicted. Then, we leverage an attribute-discriminator to select desired/undesired tokens from those candidates, providing the inter-attribute knowledge. Finally, we bridge the above two traits by an unlikelihood objective for prompt-tuning. Extensive experimental results show that DisCup can achieve a new state-of-the-art control performance while maintaining an efficient and high-quality text generation, only relying on around 10 virtual tokens.",
 }
 ```
 
