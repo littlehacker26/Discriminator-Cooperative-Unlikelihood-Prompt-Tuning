@@ -2,7 +2,7 @@
 # DisCup
 This repository contains code for the paper [DisCup: Discriminator Cooperative Unlikelihood Prompt Tuning for Controllable Text Generation](https://arxiv.org/abs/2210.09551) which is appeared at EMNLP2022. If you have any questions, please feel free to create an issue or contact the email of the first author: zhanghanqing@bit.edu.cn
 
-Welcome to our new work, namely [RMT](https://github.com/littlehacker26/Residual_Memory_Transformer), which can be regarded as a updated version of DisCup.
+Welcome to our new work, [Controllable Text Generation with Residual Memory Transformer (RMT)](https://github.com/littlehacker26/Residual_Memory_Transformer), which can be regarded as a updated version of DisCup.
 
 ## Description of Main files 
 - `discrimination.py`: discriminator training(i.e., detoxic classifier and sentiment classifier), and pure disriminator-based(FUDGE) generation
